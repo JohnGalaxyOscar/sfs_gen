@@ -1,0 +1,111 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 2490.0,
+    "radiusDifficultyScale": {
+      "Normal": 1.0,
+      "Hard": 1.0,
+      "Realistic": 1.0
+    },
+    "gravity": 0.002,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 2000.0,
+    "velocityArrowsHeight": -1000.0,
+    "mapColor": {
+      "r": 0.714,
+      "g": 0.525,
+      "b": 0.486,
+      "a": 1.0
+    },
+    "significant": true,
+    "rotateCamera": true
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Nix",
+      "planetTextureCutout": 0.65,
+      "planetTextureRotation": 0.0,
+      "planetTextureDontDistort": true,
+      "surfaceTexture_A": "Ice02",
+      "surfaceTextureSize_A": {
+        "x": 18.0,
+        "y": 12.0
+      },
+      "surfaceTexture_B": "Neutral",
+      "surfaceTextureSize_B": {
+        "x": 24.0,
+        "y": 16.0
+      },
+      "terrainTexture_C": "Neutral",
+      "terrainTextureSize_C": {
+        "x": 200.0,
+        "y": 150.0
+      },
+      "surfaceLayerSize": 10.0,
+      "minFade": 0.01,
+      "maxFade": 0.99,
+      "shadowIntensity": 2.0,
+      "shadowHeight": 4.0
+    },
+    "terrainFormulaDifficulties": {
+      "Normal": [
+        "OUTPUT = AddHeightMap( NixShape, 15645.13141, 1800)",
+        "OUTPUT = AddHeightMap( Craters, 7822.565707, 0)",
+        "OUTPUT = AddHeightMap( Craters, 3911.282854, 0)",
+        "OUTPUT = AddHeightMap( Perlin, 977.8207134, 0)"
+      ]
+    },
+    "textureFormula": [],
+    "verticeSize": 0.5,
+    "collider": true,
+    "flatZones": [],
+    "flatZonesDifficulties": {},
+    "rocks": {
+      "rockType": "Rock Round",
+      "rockDensity": 0.5,
+      "minSize": 0.2,
+      "maxSize": 0.7,
+      "powerCurve": 2.2,
+      "maxAngle": 40.0
+    }
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 1.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 1.0,
+        "contrast": 1.0,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Pluto",
+    "semiMajorAxis": 1947760.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.002,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 1.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Metztli Crater",
+      "startAngle": 165.0,
+      "endAngle": 175.0
+    }
+  ]
+}

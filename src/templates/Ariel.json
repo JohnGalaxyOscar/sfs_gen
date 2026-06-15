@@ -1,0 +1,104 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 28945.0,
+    "radiusDifficultyScale": {},
+    "gravity": 0.246,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 2000.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.325,
+      "g": 0.325,
+      "b": 0.325,
+      "a": 1.0
+    },
+    "significant": true,
+    "rotateCamera": true
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Ariel",
+      "planetTextureCutout": 0.925,
+      "planetTextureRotation": 0.0,
+      "planetTextureDontDistort": true,
+      "surfaceTexture_A": "DarkDust02",
+      "surfaceTextureSize_A": {
+        "x": 20.0,
+        "y": 10.0
+      },
+      "surfaceTexture_B": "Neutral",
+      "surfaceTextureSize_B": {
+        "x": -1.0,
+        "y": -1.0
+      },
+      "terrainTexture_C": "Neutral",
+      "terrainTextureSize_C": {
+        "x": 150.0,
+        "y": 90.0
+      },
+      "surfaceLayerSize": 25.0,
+      "minFade": 0.0,
+      "maxFade": 0.9,
+      "shadowIntensity": 8.0,
+      "shadowHeight": 8.0
+    },
+    "terrainFormulaDifficulties": {
+      "Normal": [
+        "OUTPUT = AddHeightMap(ArielCliffsCraters,181866.7987, 750)",
+        "OUTPUT = AddHeightMap(CliffsCraters,22733.34984, 650)",
+        "OUTPUT = AddHeightMap(Noise,1420.834365, 25)",
+        "OUTPUT = AddHeightMap(Craters,355.2085912, 1)"
+      ]
+    },
+    "textureFormula": [],
+    "verticeSize": 2.0,
+    "collider": true,
+    "flatZones": [],
+    "flatZonesDifficulties": {}
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 0.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 1.0,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Uranus",
+    "semiMajorAxis": 7636000.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 2.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Laica Crater",
+      "startAngle": 215.0,
+      "endAngle": 225.0
+    },
+    {
+      "name": "Kachina Chasmata",
+      "startAngle": 122.0,
+      "endAngle": 133.0
+    }
+  ]
+}

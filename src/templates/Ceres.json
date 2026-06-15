@@ -1,0 +1,119 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 23475.0,
+    "radiusDifficultyScale": {},
+    "gravity": 0.284,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 3000.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.62,
+      "g": 0.6,
+      "b": 0.584,
+      "a": 1.0
+    },
+    "significant": true,
+    "rotateCamera": true
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Ceres",
+      "planetTextureCutout": 0.9,
+      "planetTextureRotation": 0.0,
+      "planetTextureDontDistort": true,
+      "surfaceTexture_A": "HardRocks02",
+      "surfaceTextureSize_A": {
+        "x": 10.0,
+        "y": 6.0
+      },
+      "surfaceTexture_B": "None",
+      "surfaceTextureSize_B": {
+        "x": -1.0,
+        "y": -1.0
+      },
+      "terrainTexture_C": "Neutral",
+      "terrainTextureSize_C": {
+        "x": 150.0,
+        "y": 50.0
+      },
+      "surfaceLayerSize": 10.0,
+      "minFade": 0.0,
+      "maxFade": 0.9,
+      "shadowIntensity": 8.0,
+      "shadowHeight": 8.0
+    },
+    "terrainFormulaDifficulties": {
+      "Normal": [
+        "OUTPUT = AddHeightMap(Craters,73748.88754, 150)",
+        "OUTPUT = AddHeightMap(Craters,36874.44377, 75)",
+        "OUTPUT = AddHeightMap(Craters,9218.610943, 60)",
+        "OUTPUT = AddHeightMap(Noise,4609.305471, 50)",
+        "OUTPUT = AddHeightMap(Perlin,576.1631839, 2)"
+      ],
+      "Hard": [
+        "OUTPUT = AddHeightMap(Craters,147497.7751, 300)",
+        "OUTPUT = AddHeightMap(Craters,36874.44377, 75)",
+        "OUTPUT = AddHeightMap(Craters,9218.610943, 60)",
+        "OUTPUT = AddHeightMap(Noise,4609.305471, 50)",
+        "OUTPUT = AddHeightMap(Perlin,576.1631839, 2)"
+      ],
+      "Realistic": [
+        "OUTPUT = AddHeightMap(Craters,1474977.751, 3000)",
+        "OUTPUT = AddHeightMap(Craters,36874.44377, 75)",
+        "OUTPUT = AddHeightMap(Craters,9218.610943, 60)",
+        "OUTPUT = AddHeightMap(Noise,4609.305471, 50)",
+        "OUTPUT = AddHeightMap(Perlin,576.1631839, 2)"
+      ]
+    },
+    "textureFormula": [],
+    "verticeSize": 2.0,
+    "collider": true,
+    "flatZones": [],
+    "flatZonesDifficulties": {}
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 0.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 1.0,
+        "contrast": 1.1,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Sun",
+    "semiMajorAxis": 20700000000.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.07,
+    "argumentOfPeriapsis": 73.6,
+    "direction": 1,
+    "multiplierSOI": 1.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Urvara Crater",
+      "startAngle": 295.0,
+      "endAngle": 305.0
+    },
+    {
+      "name": "Kerwan Crater",
+      "startAngle": 200.0,
+      "endAngle": 210.0
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 26550.0,
+    "radiusDifficultyScale": {},
+    "gravity": 0.146,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 1000.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.569,
+      "g": 0.557,
+      "b": 0.455,
+      "a": 1.0
+    },
+    "significant": true,
+    "rotateCamera": true
+  },
+  "ATMOSPHERE_VISUALS_DATA": {
+    "GRADIENT": {
+      "positionZ": 1000,
+      "height": 13000.0,
+      "heightDifficultyScale": {},
+      "texture": "None"
+    },
+    "CLOUDS": {
+      "texture": "None",
+      "startHeight": -1.0,
+      "width": 0.0,
+      "height": -1.0,
+      "alpha": 0.0,
+      "velocity": 0.0
+    },
+    "FOG": {
+      "keys": [
+        {
+          "color": {
+            "r": 0.212,
+            "g": 0.29,
+            "b": 0.4,
+            "a": 0.0
+          },
+          "distance": 0.0
+        },
+        {
+          "color": {
+            "r": 0.212,
+            "g": 0.29,
+            "b": 0.4,
+            "a": 0.2
+          },
+          "distance": 0.0
+        }
+      ]
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Tethys",
+      "planetTextureCutout": 0.965,
+      "planetTextureRotation": 0.0,
+      "planetTextureDontDistort": true,
+      "surfaceTexture_A": "HardRocks02",
+      "surfaceTextureSize_A": {
+        "x": 30.0,
+        "y": 18.0
+      },
+      "surfaceTexture_B": "Dots02",
+      "surfaceTextureSize_B": {
+        "x": 50.0,
+        "y": 30.0
+      },
+      "terrainTexture_C": "Neutral",
+      "terrainTextureSize_C": {
+        "x": 200.0,
+        "y": 130.0
+      },
+      "surfaceLayerSize": 25.0,
+      "minFade": 0.0,
+      "maxFade": 0.9,
+      "shadowIntensity": 4.0,
+      "shadowHeight": 2.0
+    },
+    "terrainFormulaDifficulties": {
+      "Normal": [
+        "OUTPUT = AddHeightMap(TethysChasmata,166818.5699, 700)",
+        "OUTPUT = AddHeightMap(Noise,83409.28495, 250)",
+        "OUTPUT = AddHeightMap(Craters,41704.64248, 150)",
+        "OUTPUT = AddHeightMap(Craters,20852.32124, 100)",
+        "OUTPUT = AddHeightMap(Perlin,2606.540155, 6)",
+        "OUTPUT = AddHeightMap(Craters,1303.270077, 6)"
+      ]
+    },
+    "textureFormula": [],
+    "verticeSize": 2.0,
+    "collider": true,
+    "flatZones": [],
+    "flatZonesDifficulties": {},
+    "rocks": {
+      "rockType": "Rock Square",
+      "rockDensity": 0.7,
+      "minSize": 0.3,
+      "maxSize": 0.7,
+      "powerCurve": 2.2,
+      "maxAngle": 40.0
+    }
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 0.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 1.0,
+        "contrast": 1.0,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Saturn",
+    "semiMajorAxis": 11784760.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 3.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Telemachus",
+      "startAngle": 115.0,
+      "endAngle": 125.0
+    },
+    {
+      "name": "Ithaca Chasma",
+      "startAngle": 128.0,
+      "endAngle": 132.0
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>SFS行星包生成器 v2.0 alpha 使用指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', Roboto, Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #1e2a3a;
+            padding: 30px 20px;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px 40px;
+        }
+        h1 {
+            font-size: 28px;
+            color: #0b3b5f;
+            border-left: 6px solid #2c9ab3;
+            padding-left: 18px;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+        h2 {
+            font-size: 22px;
+            color: #1a5d7d;
+            margin-top: 28px;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #cbd5e1;
+        }
+        h3 {
+            font-size: 18px;
+            color: #2c6e9e;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        .warning-box, .info-box, .tip-box {
+            background: #fef9e3;
+            border-left: 5px solid #e6a017;
+            padding: 12px 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        .warning-box {
+            background: #fff2f0;
+            border-left-color: #d9534f;
+        }
+        .info-box {
+            background: #eaf7ff;
+            border-left-color: #2c9ab3;
+        }
+        .tip-box {
+            background: #e8f5e9;
+            border-left-color: #4caf50;
+        }
+        ul, ol {
+            margin: 10px 0 10px 28px;
+        }
+        li {
+            margin: 6px 0;
+        }
+        code {
+            background: #f0f2f5;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        strong {
+            color: #1f6392;
+        }
+        .footer-note {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #dee2e6;
+            font-size: 0.85rem;
+            text-align: center;
+            color: #6c757d;
+        }
+        .highlight {
+            background: #e0f2fe;
+            border-radius: 6px;
+            padding: 2px 6px;
+            font-weight: 500;
+        }
+        hr {
+            margin: 24px 0;
+            border: none;
+            border-top: 1px solid #dee2e6;
+        }
+        @media (max-width: 700px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>SFS行星包生成器 v2.0 alpha 使用指南</h1>
+    <p>本工具为2D航天游戏 <strong>Space Flight Simulator（航天模拟器，简称SFS）</strong> 的行星包拓展制作工具，系由<strong>Bilibili up主 约翰_加拉克西_奥斯卡</strong> 制作的<strong>免费工具</strong>，<span style="color:#d9534f;">坚决抵制盗用收费行为</span>。</p>
+    <p>本工具主要功能为生成行星包与行星文件，可用于辅助输入数据、简化繁杂的手动修改流程，并进行自动单位换算（现实对游戏1:20），以及统筹规划整体行星包项目，包括管理贴图、实时可视化行星系与星球地形等功能。</p>
+
+    <div class="warning-box">
+        <strong>注意事项</strong><br>
+        • 本工具暂不支持1.5版本及以下的行星包导入与编辑，多难度编辑，以及可视化贴图等视觉效果，制作水平与精力有限敬请见谅。<br>
+        • 轨道、地形等可视化效果仅作为粗略参考，具体效果以游戏内为准。<br>
+        • 本工具的使用需要对SFS行星包结构、概念及制作流程具有基本了解，纯萌新可以参考官方文档或社区教程~
+    </div>
+
+    <div class="tip-box">
+        <strong>使用技巧提示</strong><br>
+        • 编辑过程中可随时点击“<strong>更新预览</strong>”查看将会导出的行星包文件。<br>
+        • 为了节省性能，地形并不会在每次编辑后自动刷新，因此需要主动点击“<strong>刷新地形</strong>”按钮以查看预览效果。<br>
+        • 搭配宇宙沙盘或太空引擎等天文软件或NASA系外行星档案馆的数据来源使用更佳！
+    </div>
+
+    <p>此版本目前处于开发的早期阶段，对于bug汇报或者行星包制作技巧与游戏心得交流，欢迎加入<strong>ProjectGlobular计划总部qq群 995473883</strong>进行探讨~</p>
+    <p>同时，非常感谢EDGW_（伯纳德同志）制作本系列v1版本的顶力支持~没有v1版本，也就没有后来的梅西耶4行星包与目前的v2版本。玩1.5.1或1.5.2的怀旧老版SFS的朋友们依然可以进群下载v1。</p>
+
+    <hr>
+
+    <h2>一、基本操作</h2>
+    <ul>
+        <li><strong>新建项目</strong>：点击“项目”→“新建项目”开始一个新的行星包。</li>
+        <li><strong>打开/保存项目</strong>：项目文件扩展名为 <code>.sfsproj</code>，包含所有天体数据和导出设置。</li>
+        <li><strong>导入行星包</strong>：可以从现有的SFS行星包文件夹导入数据（读取Planet Data、纹理等）。点击行星包根目录文件夹以导入。</li>
+        <li><strong>导出行星包</strong>：生成完整的行星包文件夹，可直接放入游戏目录。</li>
+    </ul>
+
+    <h2>二、天体管理</h2>
+    <ul>
+        <li>左侧树形图显示所有天体及其半径、半长轴（现实单位）。</li>
+        <li>右键天体可添加子天体或删除。</li>
+        <li>顶部“系统中心”栏可编辑中心天体（如太阳）。</li>
+        <li>选中天体后，右侧标签页显示其详细参数。</li>
+    </ul>
+
+    <h2>三、编辑天体参数</h2>
+    <h3>基本参数</h3>
+    <ul>
+        <li><strong>半径</strong>：支持km/m/AU/unit单位，自动换算。</li>
+        <li><strong>表面重力</strong>：m/s²。</li>
+        <li><strong>时间加速高度</strong>：游戏内米。</li>
+        <li><strong>地图颜色</strong>：点击按钮或调整RGBA值。</li>
+    </ul>
+    <h3>大气参数</h3>
+    <ul>
+        <li>可启用/禁用大气，启用后可编辑物理参数（高度、密度、密度梯度曲率等）。</li>
+        <li><strong>大气视觉</strong>：渐变纹理、云层、雾（指迷雾滤镜）。</li>
+        <li><strong>远景外观纹理</strong>：位于最高图层的贴图，一般用于叠加云层纹理或浓厚大气天体（如金星、木星）作为大气远景外观。</li>
+    </ul>
+    <h3>地形纹理</h3>
+    <ul>
+        <li>启用固体表面后才可编辑。</li>
+        <li><strong>地形公式</strong>：支持结构化编辑（增删条目、变量名、函数类型、长度、高度、额外参数）。</li>
+        <li><strong>贴图公式</strong>：多行文本编辑器。</li>
+        <li><strong>岩石装饰</strong>：控制地表岩石细节的生成参数。</li>
+    </ul>
+    <h3>水体、光环、后期处理、地标</h3>
+    <p>按照游戏规范填写相应数据。</p>
+
+    <h2>四、从模板导入模块</h2>
+    <ul>
+        <li>每个标签页都有“<strong>从模板导入</strong>”按钮。</li>
+        <li>可从原版星球（地球、火星等）复制对应模块数据，快速填充。</li>
+        <li>地形公式编辑器支持从模板导入公式（保留结构化数据）。</li>
+    </ul>
+
+    <h2>五、轨道视图</h2>
+    <ul>
+        <li><strong>子天体视图</strong>：显示当前天体及其所有子天体的轨道。</li>
+        <li><strong>父级视图</strong>：显示当前天体、其所有同级天体以及其父级天体。</li>
+        <li>支持鼠标滚轮缩放，以及按钮缩放/重置。</li>
+        <li>方向为0（静止）的天体不显示轨道线。</li>
+    </ul>
+
+    <h2>六、地形预览</h2>
+    <ul>
+        <li>极坐标显示星球地形轮廓及标记（大气高度、时间加速高度、光环等的位置）。</li>
+        <li>支持鼠标拖拽旋转视角、滚轮缩放、按钮缩放/重置。</li>
+        <li>每次修改后点击“<strong>刷新地形</strong>”重新计算并绘制。</li>
+    </ul>
+
+    <h2>七、纹理管理</h2>
+    <ul>
+        <li><strong>内置贴图</strong>：双击名称可复制到剪贴板。</li>
+        <li><strong>自定义贴图</strong>：添加外部图片文件，导出时自动复制到行星包。建议确保文件路径不变。</li>
+        <li>导出时会检查纹理是否存在并警告。</li>
+    </ul>
+
+    <h2>八、导出设置</h2>
+    <ul>
+        <li>设置行星包名称、作者、版本、描述。</li>
+        <li>设置发射台所在天体、角度、位置。</li>
+        <li>导出后生成完整的行星包文件夹。</li>
+    </ul>
+
+    <div class="footer-note">
+        SFS行星包生成器 v2.0 alpha
+    </div>
+</div>
+</body>
+</html>

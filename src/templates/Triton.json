@@ -1,0 +1,119 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 67670.0,
+    "radiusDifficultyScale": {},
+    "gravity": 0.779,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 2000.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.796,
+      "g": 0.686,
+      "b": 0.722,
+      "a": 1.0
+    },
+    "significant": true,
+    "rotateCamera": true
+  },
+  "ATMOSPHERE_VISUALS_DATA": {
+    "GRADIENT": {
+      "positionZ": 2500,
+      "height": 7500.0,
+      "heightDifficultyScale": {},
+      "texture": "Atmo_Triton"
+    },
+    "CLOUDS": {
+      "texture": "None",
+      "startHeight": 0.0,
+      "width": 1.0,
+      "height": 1.0,
+      "alpha": 1.0,
+      "velocity": 1.0
+    },
+    "FOG": {
+      "keys": []
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Triton",
+      "planetTextureCutout": 0.995,
+      "planetTextureRotation": 0.0,
+      "planetTextureDontDistort": false,
+      "surfaceTexture_A": "DryGround",
+      "surfaceTextureSize_A": {
+        "x": 15.0,
+        "y": 8.0
+      },
+      "surfaceTexture_B": "None",
+      "surfaceTextureSize_B": {
+        "x": -1.0,
+        "y": -1.0
+      },
+      "terrainTexture_C": "Neutral",
+      "terrainTextureSize_C": {
+        "x": 150.0,
+        "y": 100.0
+      },
+      "surfaceLayerSize": 5.0,
+      "minFade": 0.0,
+      "maxFade": 0.9,
+      "shadowIntensity": 6.0,
+      "shadowHeight": 8.0
+    },
+    "terrainFormulaDifficulties": {
+      "Normal": [
+        "M = AddHeightMap( Perlin,26573.94686, 0.75, Curve8)",
+        "OUTPUT = AddHeightMap( Perlin,6643.486715, 10)",
+        "OUTPUT = AddHeightMap( Perlin,3321.743357, 50, Pow3, M)",
+        "OUTPUT = AddHeightMap( Perlin,1660.871679, 25, Pow3, M)",
+        "OUTPUT = AddHeightMap( Perlin,415.2179197, 5, Pow3, M)"
+      ]
+    },
+    "textureFormula": [],
+    "verticeSize": 2.0,
+    "collider": true,
+    "flatZones": [],
+    "flatZonesDifficulties": {}
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 0.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 1.25,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Neptune",
+    "semiMajorAxis": 14190360.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": -1,
+    "multiplierSOI": 2.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Guttae",
+      "startAngle": 140.0,
+      "endAngle": 145.0
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 38175.0,
+    "radiusDifficultyScale": {},
+    "gravity": 0.26,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 2000.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.42,
+      "g": 0.38,
+      "b": 0.314,
+      "a": 1.0
+    },
+    "significant": true,
+    "rotateCamera": true
+  },
+  "ATMOSPHERE_VISUALS_DATA": {
+    "GRADIENT": {
+      "positionZ": 1000,
+      "height": 13000.0,
+      "heightDifficultyScale": {},
+      "texture": "None"
+    },
+    "CLOUDS": {
+      "texture": "None",
+      "startHeight": -1.0,
+      "width": 0.0,
+      "height": -1.0,
+      "alpha": 0.0,
+      "velocity": 0.0
+    },
+    "FOG": {
+      "keys": [
+        {
+          "color": {
+            "r": 0.212,
+            "g": 0.29,
+            "b": 0.4,
+            "a": 0.0
+          },
+          "distance": 0.0
+        },
+        {
+          "color": {
+            "r": 0.212,
+            "g": 0.29,
+            "b": 0.4,
+            "a": 0.2
+          },
+          "distance": 0.0
+        }
+      ]
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Rhea",
+      "planetTextureCutout": 0.965,
+      "planetTextureRotation": 0.0,
+      "planetTextureDontDistort": true,
+      "surfaceTexture_A": "DarkDust02",
+      "surfaceTextureSize_A": {
+        "x": 30.0,
+        "y": 20.0
+      },
+      "surfaceTexture_B": "None",
+      "surfaceTextureSize_B": {
+        "x": -1.0,
+        "y": -1.0
+      },
+      "terrainTexture_C": "Neutral",
+      "terrainTextureSize_C": {
+        "x": 70.0,
+        "y": 35.0
+      },
+      "surfaceLayerSize": 25.0,
+      "minFade": 0.0,
+      "maxFade": 0.9,
+      "shadowIntensity": 4.0,
+      "shadowHeight": 2.0
+    },
+    "terrainFormulaDifficulties": {
+      "Normal": [
+        "OUTPUT = AddHeightMap(RheaShape,239860.5991, 1500)",
+        "OUTPUT = AddHeightMap(Noise,119930.2996, 500)",
+        "OUTPUT = AddHeightMap(Craters,59965.14978, 200)",
+        "OUTPUT = AddHeightMap(Craters,14991.28744, 100)",
+        "OUTPUT = AddHeightMap(Noise,7495.643722, 6)",
+        "OUTPUT = AddHeightMap(Craters,936.9554652, 6)",
+        "OUTPUT = AddHeightMap(Noise,468.4777326, 7)"
+      ]
+    },
+    "textureFormula": [],
+    "verticeSize": 2.0,
+    "collider": true,
+    "flatZones": [],
+    "flatZonesDifficulties": {},
+    "rocks": {
+      "rockType": "Rock Round",
+      "rockDensity": 0.7,
+      "minSize": 0.1,
+      "maxSize": 0.4,
+      "powerCurve": 2.2,
+      "maxAngle": 40.0
+    }
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 0.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 1.0,
+        "contrast": 1.0,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Saturn",
+    "semiMajorAxis": 21081600.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 2.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Tirawa Crater",
+      "startAngle": 35.0,
+      "endAngle": 45.0
+    }
+  ]
+}

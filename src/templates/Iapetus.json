@@ -1,0 +1,117 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 36750.0,
+    "radiusDifficultyScale": {},
+    "gravity": 0.223,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 5000.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.4,
+      "g": 0.329,
+      "b": 0.282,
+      "a": 1.0
+    },
+    "significant": true,
+    "rotateCamera": true
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Iapetus",
+      "planetTextureCutout": 0.75,
+      "planetTextureRotation": 0.0,
+      "planetTextureDontDistort": true,
+      "surfaceTexture_A": "Dots02",
+      "surfaceTextureSize_A": {
+        "x": 30.0,
+        "y": 10.0
+      },
+      "surfaceTexture_B": "None",
+      "surfaceTextureSize_B": {
+        "x": -1.0,
+        "y": -1.0
+      },
+      "terrainTexture_C": "Neutral",
+      "terrainTextureSize_C": {
+        "x": 150.0,
+        "y": 50.0
+      },
+      "surfaceLayerSize": 20.0,
+      "minFade": 0.0,
+      "maxFade": 0.9,
+      "shadowIntensity": 0.0,
+      "shadowHeight": 0.0
+    },
+    "terrainFormulaDifficulties": {
+      "Normal": [
+        "OUTPUT = AddHeightMap(IapetusRidge,230907.06, 4000)",
+        "OUTPUT = AddHeightMap(CratersIapetus,115453.53, 1500)",
+        "OUTPUT = AddHeightMap(CratersIapetus,57726.76501, 750)",
+        "OUTPUT = AddHeightMap(CratersIapetus,28863.3825, 450)",
+        "OUTPUT = AddHeightMap(Venus,3607.922813, 10)",
+        "OUTPUT = AddHeightMap(Noise,901.9807033, 10)"
+      ],
+      "Hard": [
+        "OUTPUT = AddHeightMap(IapetusRidge,461814.1201, 7000)",
+        "OUTPUT = AddHeightMap(CratersIapetus,115453.53, 1500)",
+        "OUTPUT = AddHeightMap(CratersIapetus,57726.76501, 750)",
+        "OUTPUT = AddHeightMap(CratersIapetus,28863.3825, 450)",
+        "OUTPUT = AddHeightMap(Venus,3607.922813, 10)",
+        "OUTPUT = AddHeightMap(Noise,901.9807033, 10)"
+      ],
+      "Realistic": [
+        "OUTPUT = AddHeightMap(IapetusRidge,4618141.201, 20000)",
+        "OUTPUT = AddHeightMap(CratersIapetus,115453.53, 1500)",
+        "OUTPUT = AddHeightMap(CratersIapetus,57726.76501, 750)",
+        "OUTPUT = AddHeightMap(CratersIapetus,28863.3825, 450)",
+        "OUTPUT = AddHeightMap(Venus,3607.922813, 10)",
+        "OUTPUT = AddHeightMap(Noise,901.9807033, 10)"
+      ]
+    },
+    "textureFormula": [],
+    "verticeSize": 2.0,
+    "collider": true,
+    "flatZones": [],
+    "flatZonesDifficulties": {}
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 0.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 1.0,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Saturn",
+    "semiMajorAxis": 142432800.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.02,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 1.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Equatorial Ridge",
+      "startAngle": 175.0,
+      "endAngle": 185.0
+    }
+  ]
+}

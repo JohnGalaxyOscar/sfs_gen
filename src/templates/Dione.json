@@ -1,0 +1,145 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 28070.0,
+    "radiusDifficultyScale": {},
+    "gravity": 0.212,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 1000.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.659,
+      "g": 0.655,
+      "b": 0.431,
+      "a": 1.0
+    },
+    "significant": true,
+    "rotateCamera": true
+  },
+  "ATMOSPHERE_VISUALS_DATA": {
+    "GRADIENT": {
+      "positionZ": 1000,
+      "height": 13000.0,
+      "heightDifficultyScale": {},
+      "texture": "None"
+    },
+    "CLOUDS": {
+      "texture": "None",
+      "startHeight": -1.0,
+      "width": 0.0,
+      "height": -1.0,
+      "alpha": 0.0,
+      "velocity": 0.0
+    },
+    "FOG": {
+      "keys": [
+        {
+          "color": {
+            "r": 0.212,
+            "g": 0.29,
+            "b": 0.4,
+            "a": 0.0
+          },
+          "distance": 0.0
+        },
+        {
+          "color": {
+            "r": 0.212,
+            "g": 0.29,
+            "b": 0.4,
+            "a": 0.2
+          },
+          "distance": 0.0
+        }
+      ]
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Dione",
+      "planetTextureCutout": 0.98,
+      "planetTextureRotation": 0.0,
+      "planetTextureDontDistort": true,
+      "surfaceTexture_A": "Snow",
+      "surfaceTextureSize_A": {
+        "x": 30.0,
+        "y": 18.0
+      },
+      "surfaceTexture_B": "None",
+      "surfaceTextureSize_B": {
+        "x": -1.0,
+        "y": -1.0
+      },
+      "terrainTexture_C": "Neutral",
+      "terrainTextureSize_C": {
+        "x": 70.0,
+        "y": 35.0
+      },
+      "surfaceLayerSize": 25.0,
+      "minFade": 0.0,
+      "maxFade": 0.9,
+      "shadowIntensity": 4.0,
+      "shadowHeight": 2.0
+    },
+    "terrainFormulaDifficulties": {
+      "Normal": [
+        "OUTPUT = AddHeightMap(DioneChasmata,176369.0116, 300)",
+        "OUTPUT = AddHeightMap(Craters,22046.12645, 200)",
+        "OUTPUT = AddHeightMap(Craters,11023.06322, 100)",
+        "OUTPUT = AddHeightMap(Craters,5511.531612, 50)",
+        "OUTPUT = AddHeightMap(Craters,1377.882903, 10)",
+        "OUTPUT = AddHeightMap(Craters,688.9414515, 5)",
+        "OUTPUT = AddHeightMap(Noise,344.4707257, 7)"
+      ]
+    },
+    "textureFormula": [],
+    "verticeSize": 2.0,
+    "collider": true,
+    "flatZones": [],
+    "flatZonesDifficulties": {}
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 0.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 1.0,
+        "contrast": 1.0,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Saturn",
+    "semiMajorAxis": 15095840.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 2.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Palatine Chasmata",
+      "startAngle": 155.0,
+      "endAngle": 165.0
+    },
+    {
+      "name": "Evander Crater",
+      "startAngle": 290.0,
+      "endAngle": 300.0
+    }
+  ]
+}

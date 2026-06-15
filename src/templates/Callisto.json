@@ -1,0 +1,82 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 120000.0,
+    "radiusDifficultyScale": {},
+    "gravity": 1.235,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 5000.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.9,
+      "g": 0.9,
+      "b": 0.9,
+      "a": 1.0
+    },
+    "significant": true,
+    "rotateCamera": true
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Callisto",
+      "planetTextureCutout": 0.999,
+      "planetTextureRotation": 0.0,
+      "planetTextureDontDistort": false,
+      "surfaceTexture_A": "Dots02",
+      "surfaceTextureSize_A": {
+        "x": 30.0,
+        "y": 10.0
+      },
+      "surfaceTexture_B": "None",
+      "surfaceTextureSize_B": {
+        "x": -1.0,
+        "y": -1.0
+      },
+      "terrainTexture_C": "Neutral",
+      "terrainTextureSize_C": {
+        "x": 80.0,
+        "y": 40.0
+      },
+      "surfaceLayerSize": 20.0,
+      "minFade": 0.0,
+      "maxFade": 0.9,
+      "shadowIntensity": 8.0,
+      "shadowHeight": 8.0
+    },
+    "terrainFormulaDifficulties": {
+      "Normal": [
+        "OUTPUT = AddHeightMap(Craters,45981.4924752688, 200)",
+        "OUTPUT = AddHeightMap(Craters,10115.9283445591, 50)",
+        "OUTPUT = AddHeightMap(Craters,2662.08640646293, 16)",
+        "OUTPUT = AddHeightMap( Perlin,3371.97611485304, 5)"
+      ]
+    },
+    "textureFormula": [],
+    "verticeSize": 2.0,
+    "collider": true,
+    "flatZones": [],
+    "flatZonesDifficulties": {}
+  },
+  "ORBIT_DATA": {
+    "parent": "Jupiter",
+    "semiMajorAxis": 75200000.0,
+    "smaDifficultyScale": {
+      "Normal": 1.0,
+      "Hard": 2.5,
+      "Realistic": 25.0
+    },
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 1.25,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": []
+}

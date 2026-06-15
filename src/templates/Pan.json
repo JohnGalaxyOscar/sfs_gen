@@ -1,0 +1,118 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 705.0,
+    "radiusDifficultyScale": {
+      "Normal": 1.0,
+      "Hard": 1.0,
+      "Realistic": 1.0
+    },
+    "gravity": 0.031,
+    "gravityDifficultyScale": {
+      "Normal": 1.0,
+      "Hard": 1.0,
+      "Realistic": 1.0
+    },
+    "timewarpHeight": 1000.0,
+    "velocityArrowsHeight": -1000.0,
+    "mapColor": {
+      "r": 0.35,
+      "g": 0.35,
+      "b": 0.3,
+      "a": 1.0
+    },
+    "significant": true,
+    "rotateCamera": true
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Pan",
+      "planetTextureCutout": 0.585,
+      "planetTextureRotation": 0.0,
+      "planetTextureDontDistort": true,
+      "surfaceTexture_A": "HardRocks02",
+      "surfaceTextureSize_A": {
+        "x": 24.0,
+        "y": 15.0
+      },
+      "surfaceTexture_B": "Neutral",
+      "surfaceTextureSize_B": {
+        "x": 24.0,
+        "y": 24.0
+      },
+      "terrainTexture_C": "Neutral",
+      "terrainTextureSize_C": {
+        "x": 200.0,
+        "y": 150.0
+      },
+      "surfaceLayerSize": 10.0,
+      "minFade": 0.0,
+      "maxFade": 0.9,
+      "shadowIntensity": 2.0,
+      "shadowHeight": 4.0
+    },
+    "terrainFormulaDifficulties": {
+      "Normal": [
+        "OUTPUT = AddHeightMap( PanRidge, 4429.6456416, 500)",
+        "OUTPUT = AddHeightMap( Perlin, 65659.28646002, 0, Curve4)",
+        "M      = AddHeightMap( Perlin, 65659.28646002, 0)",
+        "OUTPUT = AddHeightMap( Perlin, 1107.41141, 4)",
+        "OUTPUT = AddHeightMap( Perlin, 553.7057052, 2)"
+      ]
+    },
+    "textureFormula": [
+      "OUTPUT = AddHeightMap( Perlin, 6283.18530718, 1)"
+    ],
+    "verticeSize": 0.5,
+    "collider": true,
+    "flatZones": [],
+    "flatZonesDifficulties": {},
+    "rocks": {
+      "rockType": "Rock Round",
+      "rockDensity": 1.1,
+      "minSize": 0.2,
+      "maxSize": 0.5,
+      "powerCurve": 2.2,
+      "maxAngle": 40.0
+    }
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 0.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 0.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Saturn",
+    "semiMajorAxis": 6329600.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 5.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Equatorial Ridge",
+      "startAngle": 175.0,
+      "endAngle": 185.0
+    }
+  ]
+}

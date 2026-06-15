@@ -1,0 +1,72 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 34817000.0,
+    "radiusDifficultyScale": {},
+    "gravity": 247.0,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 500000.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 2.0,
+      "g": 2.0,
+      "b": 2.0,
+      "a": 1.0
+    },
+    "significant": true,
+    "rotateCamera": true
+  },
+  "ATMOSPHERE_PHYSICS_DATA": {
+    "height": 300000.0,
+    "density": 0.005,
+    "curve": 13.0,
+    "curveScale": {},
+    "parachuteMultiplier": 1.0,
+    "upperAtmosphere": 0.5,
+    "heightDifficultyScale": {},
+    "shockwaveIntensity": 0.5,
+    "minHeatingVelocityMultiplier": 1.0
+  },
+  "ATMOSPHERE_VISUALS_DATA": {
+    "GRADIENT": {
+      "positionZ": 40000,
+      "height": 200000000.0,
+      "heightDifficultyScale": {},
+      "texture": "Atmo_Sun"
+    },
+    "CLOUDS": {
+      "texture": "None",
+      "startHeight": 0.0,
+      "width": 0.0,
+      "height": 0.0,
+      "alpha": 0.0,
+      "velocity": 0.0
+    },
+    "FOG": {
+      "keys": []
+    }
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 0.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 0.9,
+        "contrast": 0.8,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": false,
+    "Takeoff": false,
+    "Atmosphere": false,
+    "Orbit": true,
+    "Crash": false
+  },
+  "LANDMARKS": []
+}

@@ -1,0 +1,119 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 2465.0,
+    "radiusDifficultyScale": {
+      "Normal": 1.0,
+      "Hard": 1.0,
+      "Realistic": 1.0
+    },
+    "gravity": 0.019,
+    "gravityDifficultyScale": {
+      "Normal": 1.0,
+      "Hard": 1.0,
+      "Realistic": 1.0
+    },
+    "timewarpHeight": 2000.0,
+    "velocityArrowsHeight": -1000.0,
+    "mapColor": {
+      "r": 0.839,
+      "g": 0.486,
+      "b": 0.369,
+      "a": 1.0
+    },
+    "significant": true,
+    "rotateCamera": true
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Thebe",
+      "planetTextureCutout": 0.65,
+      "planetTextureRotation": 0.0,
+      "planetTextureDontDistort": true,
+      "surfaceTexture_A": "Blured02",
+      "surfaceTextureSize_A": {
+        "x": 16.0,
+        "y": 10.0
+      },
+      "surfaceTexture_B": "Neutral",
+      "surfaceTextureSize_B": {
+        "x": 24.0,
+        "y": 24.0
+      },
+      "terrainTexture_C": "Neutral",
+      "terrainTextureSize_C": {
+        "x": 200.0,
+        "y": 150.0
+      },
+      "surfaceLayerSize": 10.0,
+      "minFade": 0.0,
+      "maxFade": 0.9,
+      "shadowIntensity": 1.5,
+      "shadowHeight": 4.0
+    },
+    "terrainFormulaDifficulties": {
+      "Normal": [
+        "OUTPUT = AddHeightMap( ThebeShape, 15488.05178, 1500)",
+        "OUTPUT = AddHeightMap( Craters, 7744.02589, 60)",
+        "M      = AddHeightMap( Craters, 7744.025891, 0)",
+        "OUTPUT = AddHeightMap( Craters, 3872.012946, 35)",
+        "OUTPUT = AddHeightMap( Noise, 968.0032364, 35)",
+        "OUTPUT = AddHeightMap( Perlin, 242.0008091, 1)"
+      ]
+    },
+    "textureFormula": [
+      "OUTPUT = AddHeightMap( Perlin, 6283.18530718, 0)"
+    ],
+    "verticeSize": 0.5,
+    "collider": true,
+    "flatZones": [],
+    "flatZonesDifficulties": {},
+    "rocks": {
+      "rockType": "Rock Square",
+      "rockDensity": 1.1,
+      "minSize": 0.3,
+      "maxSize": 0.5,
+      "powerCurve": 2.2,
+      "maxAngle": 40.0
+    }
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 0.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 0.0,
+        "hueShift": 0.0,
+        "saturation": 0.8,
+        "contrast": 1.0,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Jupiter",
+    "semiMajorAxis": 8875560.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.01,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 8.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Zethus Crater",
+      "startAngle": 175.0,
+      "endAngle": 185.0
+    }
+  ]
+}

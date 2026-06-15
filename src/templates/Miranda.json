@@ -1,0 +1,132 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 11790.0,
+    "radiusDifficultyScale": {
+      "Normal": 1.0,
+      "Hard": 2.0,
+      "Realistic": 11.0
+    },
+    "gravity": 0.076,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 3000.0,
+    "velocityArrowsHeight": -1000.0,
+    "mapColor": {
+      "r": 0.667,
+      "g": 0.675,
+      "b": 0.671,
+      "a": 1.0
+    },
+    "significant": true,
+    "rotateCamera": true
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Miranda",
+      "planetTextureCutout": 0.78,
+      "planetTextureRotation": 0.0,
+      "planetTextureDontDistort": true,
+      "surfaceTexture_A": "Circles02",
+      "surfaceTextureSize_A": {
+        "x": 24.0,
+        "y": 12.0
+      },
+      "surfaceTexture_B": "HardRocks02",
+      "surfaceTextureSize_B": {
+        "x": 24.0,
+        "y": 24.0
+      },
+      "terrainTexture_C": "Neutral",
+      "terrainTextureSize_C": {
+        "x": 70.0,
+        "y": 35.0
+      },
+      "surfaceLayerSize": 50.0,
+      "minFade": 0.0,
+      "maxFade": 0.9,
+      "shadowIntensity": 8.0,
+      "shadowHeight": 4.0
+    },
+    "terrainFormulaDifficulties": {
+      "Normal": [
+        "OUTPUT = AddHeightMap(Cliff, 74078.75477, 1000)",
+        "OUTPUT = AddHeightMap(Cliff, 9259.844346, 90)",
+        "OUTPUT = AddHeightMap(Cliff, 1157.480543, 4)"
+      ],
+      "Hard": [
+        "OUTPUT = AddHeightMap(Cliff, 148157.5095, 2000)",
+        "OUTPUT = AddHeightMap(Cliff, 9259.844346, 90)",
+        "OUTPUT = AddHeightMap(Cliff, 1157.480543, 4)"
+      ],
+      "Realistic": [
+        "OUTPUT = AddHeightMap(Cliff, 814866.3025, 11000)",
+        "OUTPUT = AddHeightMap(Cliff, 9259.844346, 90)",
+        "OUTPUT = AddHeightMap(Cliff, 1157.480543, 4)"
+      ]
+    },
+    "textureFormula": [
+      "OUTPUT = AddHeightMap( Perlin, 6283.18530718, 0)"
+    ],
+    "verticeSize": 0.5,
+    "collider": true,
+    "flatZones": [],
+    "flatZonesDifficulties": {},
+    "rocks": {
+      "rockType": "Rock Round",
+      "rockDensity": 1.1,
+      "minSize": 0.15,
+      "maxSize": 0.7,
+      "powerCurve": 2.2,
+      "maxAngle": 40.0
+    }
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 0.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 1.0,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Uranus",
+    "semiMajorAxis": 5175600.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 3.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Verona Rupes",
+      "startAngle": 310.0,
+      "endAngle": 315.0
+    },
+    {
+      "name": "Arden Corona",
+      "startAngle": 45.0,
+      "endAngle": 55.0
+    },
+    {
+      "name": "Elsinore Corona",
+      "startAngle": 255.0,
+      "endAngle": 265.0
+    }
+  ]
+}

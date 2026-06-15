@@ -1,0 +1,114 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 10450.0,
+    "radiusDifficultyScale": {
+      "Normal": 1.0,
+      "Hard": 1.0,
+      "Realistic": 1.0
+    },
+    "gravity": 0.054,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 4000.0,
+    "velocityArrowsHeight": -1000.0,
+    "mapColor": {
+      "r": 0.604,
+      "g": 0.604,
+      "b": 0.604,
+      "a": 1.0
+    },
+    "significant": true,
+    "rotateCamera": true
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Proteus",
+      "planetTextureCutout": 0.8,
+      "planetTextureRotation": 0.0,
+      "planetTextureDontDistort": true,
+      "surfaceTexture_A": "Dots02",
+      "surfaceTextureSize_A": {
+        "x": 24.0,
+        "y": 16.0
+      },
+      "surfaceTexture_B": "HardRocks02",
+      "surfaceTextureSize_B": {
+        "x": 24.0,
+        "y": 16.0
+      },
+      "terrainTexture_C": "Circles02",
+      "terrainTextureSize_C": {
+        "x": 200.0,
+        "y": 150.0
+      },
+      "surfaceLayerSize": 35.0,
+      "minFade": 0.15,
+      "maxFade": 0.65,
+      "shadowIntensity": 8.0,
+      "shadowHeight": 4.0
+    },
+    "terrainFormulaDifficulties": {
+      "Normal": [
+        "OUTPUT = AddHeightMap( Proteus, 65659.28646002, 3000)",
+        "OUTPUT = AddHeightMap( Perlin, 65659.28646002, 15, Curve4)",
+        "M      = AddHeightMap( Perlin, 65659.28646002, 2, )",
+        "OUTPUT = AddHeightMap( Perlin, 2051.852702, 8, null, M)",
+        "OUTPUT = AddHeightMap( Perlin, 512.9631755, 2, null, M)"
+      ]
+    },
+    "textureFormula": [
+      "OUTPUT = AddHeightMap( Perlin, 6283.18530718, 1)"
+    ],
+    "verticeSize": 0.5,
+    "collider": true,
+    "flatZones": [],
+    "flatZonesDifficulties": {},
+    "rocks": {
+      "rockType": "Rock Square",
+      "rockDensity": 1.1,
+      "minSize": 0.5,
+      "maxSize": 2.0,
+      "powerCurve": 2.2,
+      "maxAngle": 40.0
+    }
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 1.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.5,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Neptune",
+    "semiMajorAxis": 4705880.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 4.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Pharos Crater",
+      "startAngle": 40.0,
+      "endAngle": 50.0
+    }
+  ]
+}

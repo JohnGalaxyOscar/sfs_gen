@@ -1,0 +1,101 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 38070.0,
+    "radiusDifficultyScale": {},
+    "gravity": 0.358,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 3000.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.745,
+      "g": 0.773,
+      "b": 0.827,
+      "a": 1.0
+    },
+    "significant": true,
+    "rotateCamera": true
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Oberon",
+      "planetTextureCutout": 0.98,
+      "planetTextureRotation": 0.0,
+      "planetTextureDontDistort": true,
+      "surfaceTexture_A": "Dots02",
+      "surfaceTextureSize_A": {
+        "x": 30.0,
+        "y": 15.0
+      },
+      "surfaceTexture_B": "Dots02",
+      "surfaceTextureSize_B": {
+        "x": 40.0,
+        "y": 20.0
+      },
+      "terrainTexture_C": "Neutral",
+      "terrainTextureSize_C": {
+        "x": 100.0,
+        "y": 50.0
+      },
+      "surfaceLayerSize": 20.0,
+      "minFade": 0.0,
+      "maxFade": 0.9,
+      "shadowIntensity": 8.0,
+      "shadowHeight": 8.0
+    },
+    "terrainFormulaDifficulties": {
+      "Normal": [
+        "OUTPUT = AddHeightMap(OberonChasma,239200.8646, 500)",
+        "OUTPUT = AddHeightMap(Craters,119600.4323, 250)",
+        "OUTPUT = AddHeightMap(Craters,59800.21616, 150)",
+        "OUTPUT = AddHeightMap(Craters,29900.10808, 100)",
+        "OUTPUT = AddHeightMap(Perlin,3737.51351, 8)",
+        "OUTPUT = AddHeightMap(Noise,467.1891888, 7)"
+      ]
+    },
+    "textureFormula": [],
+    "verticeSize": 2.0,
+    "collider": true,
+    "flatZones": [],
+    "flatZonesDifficulties": {}
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 0.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 0.8,
+        "contrast": 1.0,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Uranus",
+    "semiMajorAxis": 23340800.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 1.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Mommur Chasma",
+      "startAngle": 63.0,
+      "endAngle": 73.0
+    }
+  ]
+}
