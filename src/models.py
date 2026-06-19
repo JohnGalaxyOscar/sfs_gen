@@ -2,6 +2,7 @@ import json
 import copy
 import os
 import sys
+import re
 
 def resource_path(relative_path):
     """获取资源的绝对路径，兼容开发环境和打包后的exe"""
@@ -213,8 +214,21 @@ class Project:
         for filename in os.listdir(planet_data_dir):
             if filename.endswith(".txt"):
                 filepath = os.path.join(planet_data_dir, filename)
-                with open(filepath, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
+                with open(filepath, 'r', encoding='utf-8-sig') as f:
+                    content = f.read()
+                # 去除首尾空白字符
+                content = content.strip()
+                # 如果文件为空，跳过
+                if not content:
+                    print(f"警告: 文件 {filename} 为空，跳过。")
+                    continue
+                # 去除末尾逗号（兼容SFS）
+                content = re.sub(r',(\s*[}\]])', r'\1', content)
+                try:
+                    data = json.loads(content)
+                except json.JSONDecodeError as e:
+                    print(f"警告: 文件 {filename} 解析失败: {e}，跳过该天体。")
+                    continue
                 # 提取天体名称（文件名去掉.txt）
                 name = filename[:-4]
                 # 根据是否有 ORBIT_DATA 判断类型

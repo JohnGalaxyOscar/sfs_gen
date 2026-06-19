@@ -9,7 +9,7 @@ class UnitConverter:
     KM_TO_M = 1000                    # 1 km = 1000 m
     REAL_AU_TO_KM = 1.496e8           # 1 AU = 1.496亿 km
     REAL_AU_TO_M = REAL_AU_TO_KM * KM_TO_M  # 1 AU = 1.496e11 m
-    
+        
     # SFS游戏定义：20 m = 1 unit
     # 注意：游戏内存储的半径、半长轴等都是以"米"为单位的！
     # 1 unit = 20 米，所以 1 米 = 0.05 unit
@@ -71,7 +71,7 @@ class UnitSpinBox(QWidget):
     unit_changed = Signal()
     
     def __init__(self, initial_value: float = 0.0, initial_unit: str = "km",
-                 min_val: float = 0.0, max_val: float = 1e50, decimals: int = 12):
+                 min_val: float = 0.0, max_val: float = 1e50, decimals: int = 30):
         super().__init__()
         self.layout = QHBoxLayout()
         self.layout.setContentsMargins(0, 0, 0, 0)
@@ -115,11 +115,11 @@ class UnitSpinBox(QWidget):
         
         # 动态调整小数位数
         if new_unit == "AU":
-            self.spinbox.setDecimals(12)
+            self.spinbox.setDecimals(30)
         elif new_unit == "unit":
-            self.spinbox.setDecimals(6)
+            self.spinbox.setDecimals(30)
         else:
-            self.spinbox.setDecimals(3)
+            self.spinbox.setDecimals(30)
         
         self._current_unit = new_unit
         self.unit_changed.emit()

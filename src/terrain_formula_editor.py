@@ -265,14 +265,17 @@ class TerrainFormulaEditor(QWidget):
 
     def set_formulas(self, formula_lines):
         """从字符串列表加载公式"""
-        # 清空现有条目
-        for entry in self.entries[:]:
-            entry.deleteLater()
+        # 清空现有条目（同步移除）
+        while self.scroll_layout.count():
+            item = self.scroll_layout.takeAt(0)
+            if item.widget():
+                item.widget().deleteLater()
         self.entries.clear()
+        # 强制更新布局
         self.scroll_layout.update()
+        self.scroll_content.adjustSize()
 
         if not formula_lines:
-            self.add_empty_entry()
             return
 
         for line in formula_lines:

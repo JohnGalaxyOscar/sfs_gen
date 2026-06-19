@@ -43,15 +43,15 @@ from terrain_formula_editor import TerrainFormulaEditor
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("SFS行星包生成器 v2.01 beta")
+        # 设置窗口图标（影响任务栏显示）
+        icon_path = resource_path("icon.ico")
+        if os.path.exists(icon_path):
+            from PySide6.QtGui import QIcon
+            self.setWindowIcon(QIcon(icon_path))
+        self.setWindowTitle("SFS行星包生成器 v2.03 beta")
         plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei']  # 支持中文
         plt.rcParams['axes.unicode_minus'] = False  # 解决负号显示问题
         self.setGeometry(100, 100, 1000, 800)
-        
-        # 设置窗口图标（显示在任务栏和窗口左上角）
-        icon_path = resource_path("icon.ico")
-        if os.path.exists(icon_path):
-            self.setWindowIcon(QIcon(icon_path))
 
         # 左侧树形视图 + 按钮栏
         self.tree_widget = QTreeView()
@@ -351,7 +351,7 @@ class MainWindow(QMainWindow):
             self.refresh_tree()
             # 同步导出设置到界面
             self._sync_ui_from_project()
-            self.setWindowTitle(f"SFS行星包生成器 v2.01 beta - 导入: {os.path.basename(folder_path)}")
+            self.setWindowTitle(f"SFS行星包生成器 v2.03 beta - 导入: {os.path.basename(folder_path)}")
             QMessageBox.information(self, "成功", f"成功导入行星包: {folder_path}")
         except Exception as e:
             QMessageBox.critical(self, "错误", f"导入行星包失败: {e}")
@@ -1005,6 +1005,7 @@ class MainWindow(QMainWindow):
         # ========== 地形纹理 ==========
         terrain = data.get("TERRAIN_DATA", {})
         has_terrain = bool(terrain)  # 如果数据中有 TERRAIN_DATA 则启用
+        self.terrain_enable.setChecked(has_terrain)
 
         if has_terrain:
             tex_data = terrain.get("TERRAIN_TEXTURE_DATA", {})
@@ -1033,6 +1034,8 @@ class MainWindow(QMainWindow):
             self.vertice_size.setValue(2.0)
             self.collider_check.setChecked(True)
             self.flat_zones.setPlainText("[]")
+            # 清空地形公式编辑器（不保留任何条目）
+            self.terrain_formula_editor.set_formulas([])
 
         # 加载地形公式（从 terrainFormulaDifficulties.Normal）
         formulas = terrain.get("terrainFormulaDifficulties", {})
@@ -1452,7 +1455,7 @@ class MainWindow(QMainWindow):
         self.current_body = earth_body
         self.load_body_to_ui(self.current_body)
         self.current_project.file_path = None
-        self.setWindowTitle("SFS行星包生成器 v2.01 beta - 未命名项目")
+        self.setWindowTitle("SFS行星包生成器 v2.03 beta - 未命名项目")
         self.schedule_orbit_update()
         self._sync_ui_from_project()
         self.terrain_preview.schedule_update(self.current_body)
@@ -1512,7 +1515,7 @@ class MainWindow(QMainWindow):
             else:
                 # 项目无天体，创建一个默认的
                 self.new_project()
-            self.setWindowTitle(f"SFS行星包生成器 v2.01 beta - {file_path}")
+            self.setWindowTitle(f"SFS行星包生成器 v2.03 beta - {file_path}")
             self.schedule_orbit_update()
             self.refresh_tree()
         except Exception as e:
@@ -1529,7 +1532,7 @@ class MainWindow(QMainWindow):
         if file_path:
             self._save_to_file(file_path)
             self.current_project.file_path = file_path
-            self.setWindowTitle(f"SFS行星包生成器 v2.01 beta - {file_path}")
+            self.setWindowTitle(f"SFS行星包生成器 v2.03 beta - {file_path}")
     
     def _save_to_file(self, path: str):
         # 保存前将当前界面的数据同步到当前天体
@@ -2447,11 +2450,6 @@ class MainWindow(QMainWindow):
 
         main_layout.addWidget(param_widget)
 
-        # 测试按钮（调试用，保留）
-        btn_test = QPushButton("测试刷新树形图")
-        btn_test.clicked.connect(self.on_radius_or_semi_changed)
-        main_layout.addWidget(btn_test)
-
         main_layout.addStretch()
 
         # 连接参数变化信号到轨道视图更新
@@ -3003,8 +3001,11 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     from models import ensure_templates_dir
     ensure_templates_dir()
-    
     app = QApplication(sys.argv)
+    # 设置应用程序图标（影响任务栏和窗口）
+    icon_path = resource_path("icon.ico")
+    if os.path.exists(icon_path):
+        app.setWindowIcon(QIcon(icon_path))
     window = MainWindow()
     window.show()
     sys.exit(app.exec())
