@@ -48,7 +48,7 @@ class MainWindow(QMainWindow):
         if os.path.exists(icon_path):
             from PySide6.QtGui import QIcon
             self.setWindowIcon(QIcon(icon_path))
-        self.setWindowTitle("SFS行星包生成器 v2.03 beta")
+        self.setWindowTitle("SFS行星包生成器 v2.04 beta")
         plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei']  # 支持中文
         plt.rcParams['axes.unicode_minus'] = False  # 解决负号显示问题
         self.setGeometry(100, 100, 1000, 800)
@@ -351,7 +351,7 @@ class MainWindow(QMainWindow):
             self.refresh_tree()
             # 同步导出设置到界面
             self._sync_ui_from_project()
-            self.setWindowTitle(f"SFS行星包生成器 v2.03 beta - 导入: {os.path.basename(folder_path)}")
+            self.setWindowTitle(f"SFS行星包生成器 v2.04 beta - 导入: {os.path.basename(folder_path)}")
             QMessageBox.information(self, "成功", f"成功导入行星包: {folder_path}")
         except Exception as e:
             QMessageBox.critical(self, "错误", f"导入行星包失败: {e}")
@@ -404,9 +404,29 @@ class MainWindow(QMainWindow):
                         missing_textures.add(f"{tex} (在天体 '{body.name}' 的 {'.'.join(field_path)} 中)")
         
         if missing_textures:
-            msg = "以下纹理未在自定义贴图中找到且不是内置贴图，导出后游戏可能显示异常：\n" + "\n".join(sorted(missing_textures))
-            reply = QMessageBox.question(self, "纹理缺失警告", msg + "\n\n是否继续导出？", QMessageBox.Yes | QMessageBox.No)
-            if reply == QMessageBox.No:
+            # 使用自定义对话框，固定大小可滚动
+            dialog = QDialog(self)
+            dialog.setWindowTitle("纹理缺失警告")
+            dialog.setFixedSize(600, 400)  # 固定大小，可调整数值
+            layout = QVBoxLayout(dialog)
+            
+            label = QLabel("以下纹理未在自定义贴图中找到且不是内置贴图，导出后游戏可能显示异常：")
+            layout.addWidget(label)
+            
+            text_edit = QTextEdit()
+            text_edit.setPlainText("\n".join(sorted(missing_textures)))
+            text_edit.setReadOnly(True)
+            layout.addWidget(text_edit)
+            
+            # 按钮
+            button_box = QDialogButtonBox(QDialogButtonBox.Yes | QDialogButtonBox.No)
+            button_box.button(QDialogButtonBox.Yes).setText("继续导出")
+            button_box.button(QDialogButtonBox.No).setText("取消")
+            button_box.accepted.connect(dialog.accept)
+            button_box.rejected.connect(dialog.reject)
+            layout.addWidget(button_box)
+            
+            if dialog.exec() == QDialog.Rejected:
                 return
 
         pack_name = self.current_project.export_pack_name
@@ -1455,7 +1475,7 @@ class MainWindow(QMainWindow):
         self.current_body = earth_body
         self.load_body_to_ui(self.current_body)
         self.current_project.file_path = None
-        self.setWindowTitle("SFS行星包生成器 v2.03 beta - 未命名项目")
+        self.setWindowTitle("SFS行星包生成器 v2.04 beta - 未命名项目")
         self.schedule_orbit_update()
         self._sync_ui_from_project()
         self.terrain_preview.schedule_update(self.current_body)
@@ -1515,7 +1535,7 @@ class MainWindow(QMainWindow):
             else:
                 # 项目无天体，创建一个默认的
                 self.new_project()
-            self.setWindowTitle(f"SFS行星包生成器 v2.03 beta - {file_path}")
+            self.setWindowTitle(f"SFS行星包生成器 v2.04 beta - {file_path}")
             self.schedule_orbit_update()
             self.refresh_tree()
         except Exception as e:
@@ -1532,7 +1552,7 @@ class MainWindow(QMainWindow):
         if file_path:
             self._save_to_file(file_path)
             self.current_project.file_path = file_path
-            self.setWindowTitle(f"SFS行星包生成器 v2.03 beta - {file_path}")
+            self.setWindowTitle(f"SFS行星包生成器 v2.04 beta - {file_path}")
     
     def _save_to_file(self, path: str):
         # 保存前将当前界面的数据同步到当前天体
